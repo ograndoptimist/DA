@@ -1,9 +1,13 @@
+#include <iostream>
+
+using namespace std;
+
 class ClockType {
 	public:
 		ClockType(int, int, int);
-		ClockType();
+		ClockType(void);
 		void setTime(int, int, int );
-		Clockype getTime(void) const;
+		ClockType getTime(void) const;
 		void incrementHour(void);
 		void incrementMin(void);
 		void incrementSec(void);
@@ -71,7 +75,14 @@ void ClockType::setTime(int h, int m, int s)
 	}	
 }
 
-void ClockType::getTime()
+ClockType ClockType::getTime() const
 {
-	
+	return ClockType(0, 0, 0);	
 }
+
+void ClockType::printTime() const
+{
+	cout << hour << ':' << min << ':' << sec << endl;
+}
+
+
